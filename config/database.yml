@@ -1,0 +1,22 @@
+development: &default
+  adapter: postgresql
+  database: blogCybele_development
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+  timeout: 5000
+  host: localhost
+  port: 5432
+  username: root
+  password: root
+test:
+  <<: *default
+  database: blogCybele_test
+
+production:
+  <<: *default
+  database: blogCybele_production 
+
+staging:
+  <<: *default
+  database: blogCybele_staging   
