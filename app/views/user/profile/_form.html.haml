@@ -9,6 +9,7 @@
       .form-inputs
         = f.input :name
         = f.input :surname
+        = f.input :time_zone, input_html: { class: 'chosen-select'}, include_blank: t('view.select')
 
       .form-actions
         = f.button :submit, class: 'btn btn-primary'
