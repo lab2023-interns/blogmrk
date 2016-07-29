@@ -16,6 +16,9 @@
       = s.attribute :created_at
       = s.attribute :updated_at
   .panel-footer
-    = link_to edit_user_profile_path(@profile), class: 'bt btn-large' do
+    = link_to root_path, class:   'btn btn-ling' do
+      %i.fa.fa-arrow-left
+      Geri Dön
+    = link_to edit_user_profile_path(@profile), class: 'btn btn-large' do
       %i.fa.fa-pencil
       Profil bilgilerini güncelle
