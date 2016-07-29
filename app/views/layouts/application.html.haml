@@ -17,12 +17,36 @@
     = render 'layouts/partials/warnings'
     .container-narrow
       .masthead
-        %ul.nav.nav-pills.pull-right
-          %li.active
-            %a{href: "/"}
-              = t('navbar.home_page')
-        %h3.muted= link_to "Blogcybele", root_path
-      %hr/
+        %nav.navbar.navbar-default
+          .container-fluid
+            .navbar-header
+              %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              =link_to 'blogCybele', root_path, class: 'navbar-brand'
+
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              %ul.nav.navbar-nav
+
+              %form.navbar-form.navbar-left
+                .form-group
+                  %input.form-control{:placeholder => "Anasayfada ara", :type => "text"}/
+                %button.btn.btn-default{:type => "submit" }
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+              %ul.nav.navbar-nav.navbar-right
+                %li
+                  =link_to  new_user_session_path do
+                    %i.fa.fa-sign-in{"aria-hidden" => "true"}
+                    Giriş yap
+                %li
+                  =link_to new_user_registration_path do
+                    %i.fa.fa-user-plus{"aria-hidden" => "true"}
+                    Üye ol
+
+
+
       = render partial: 'layouts/partials/messages'
       = yield
       %hr/
