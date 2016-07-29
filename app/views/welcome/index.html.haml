@@ -12,6 +12,5 @@
     = link_to t('navbar.edit_login_info'), edit_user_registration_path, class: 'btn btn-large'
     = link_to "Profil bilgilerini göster", user_profile_path(current_user), class: 'btn btn-large'
   - else
-    = link_to 'Hello' , '#' , class: 'btn btn-red'
     = link_to t('navbar.signup'), new_user_registration_path, class: 'btn btn-large btn-success'
     = link_to t('navbar.signin'), new_user_session_path, class: 'btn btn-large'
